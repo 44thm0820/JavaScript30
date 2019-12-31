@@ -82,6 +82,18 @@
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
+    // let countsOfVehicleTypes = {};
+    let countsOfVehicleTypes = data.reduce((acc, curr) => {
+      // if (acc[curr]) { //not bulletproof as tests for absence of all falsey values
+      if (curr in acc) { // better coding
+        acc[curr] += 1;
+      } else {
+        acc[curr] = 1;
+      }
+      return acc;
+    }, {});
+    console.table(countsOfVehicleTypes);
+
 
   </script>
 </body>
