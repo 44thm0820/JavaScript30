@@ -67,17 +67,19 @@
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
-    inventors.sort( (a, b) => {
-      if (a.last < b.last) {
+    people.sort( (a, b) => {
+      let arrA = a.split(', ');
+      let arrB = b.split(', ');
+      if (arrA[0] < arrB[0]) {
         return -1;
-      } else if (a.last > b.last) {
+      } else if (arrA[0] > arrB[0]) {
         return 1;
       } else {
         return 0;
       }
     } );
     console.log('sorting people alphabetically by last name');
-    console.table(inventors);
+    console.table(people);
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
