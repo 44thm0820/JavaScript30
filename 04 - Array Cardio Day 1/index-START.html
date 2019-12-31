@@ -37,6 +37,13 @@
 
     // Array.prototype.map()
     // 2. Give us an array of the inventors' first and last names
+    let inventorsNamesObj = inventors.map (
+      obj => {
+        return {first: obj.first, last: obj.last}
+        // can't omit return keyword for arrow function to work!
+      }
+    );
+    console.table(inventorsNamesObj);
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
