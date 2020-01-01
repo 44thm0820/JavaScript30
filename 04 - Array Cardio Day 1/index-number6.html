@@ -28,7 +28,7 @@
     ];
 
     const people = ['Beck, Glenn', 'Becker, Carl', 'Beckett, Samuel', 'Beddoes, Mick', 'Beecher, Henry', 'Beethoven, Ludwig', 'Begin, Menachem', 'Belloc, Hilaire', 'Bellow, Saul', 'Benchley, Robert', 'Benenson, Peter', 'Ben-Gurion, David', 'Benjamin, Walter', 'Benn, Tony', 'Bennington, Chester', 'Benson, Leana', 'Bent, Silas', 'Bentsen, Lloyd', 'Berger, Ric', 'Bergman, Ingmar', 'Berio, Luciano', 'Berle, Milton', 'Berlin, Irving', 'Berne, Eric', 'Bernhard, Sandra', 'Berra, Yogi', 'Berry, Halle', 'Berry, Wendell', 'Bethea, Erin', 'Bevan, Aneurin', 'Bevel, Ken', 'Biden, Joseph', 'Bierce, Ambrose', 'Biko, Steve', 'Billings, Josh', 'Biondo, Frank', 'Birrell, Augustine', 'Black, Elk', 'Blair, Robert', 'Blair, Tony', 'Blake, William'];
-
+/*
     // Array.prototype.filter()
     // 1. Filter the list of inventors for those who were born in the 1500's
     // from mdn : the filter method creates a new array that pass the test implemented by the provided function
@@ -59,15 +59,13 @@
     // 5. Sort the inventors by years lived
     inventors.sort( (a, b) => (a.passed - a.year) - (b.passed - b.year) );
     console.table(inventors);
-
+ */
 
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
 
     // create an array of objects from a nodeList by using querySelectorAll to grab all htmlnodes  with the class 'mw-category' found in chrome developer tools that pinpoint all 'a' wiki list of urls of the Boulevards in Paris in wikipedia
-    // See separate html file index-number6.html for uncommented version of code below
-
-/*     let arrWikiBlvdsParis = Array.from(document.querySelectorAll('.mw-category a'));
+    let arrWikiBlvdsParis = Array.from(document.querySelectorAll('.mw-category a'));
 
     let deBlvdsParis = arrWikiBlvdsParis
                         .map(aTagHyperlink => aTagHyperlink.textContent)
@@ -75,9 +73,8 @@
 
     console.table(deBlvdsParis);
 
-    */
 
-    // 7. sort Exercise
+/*     // 7. sort Exercise
     // Sort the people alphabetically by last name
     people.sort( (a, b) => {
       let arrA = a.split(', ');
@@ -106,7 +103,7 @@
       }
       return acc;
     }, {});
-    console.table(countsOfVehicleTypes);
+    console.table(countsOfVehicleTypes); */
 
 
   </script>
