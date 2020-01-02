@@ -42,6 +42,21 @@
     // Array.prototype.findIndex()
     // Find the comment with this ID
     // delete the comment with the ID of 823423
+    let foundIndex = comments.findIndex(comment => comment.id === 823423);
+
+    // splice could have been used such that
+    // comments.splice(foundIndex, 1);
+    // but this mutates the original array
+
+    // statement below omits element with the index foundIndex and creates a new array
+    // useful for avoiding mutating original array
+    let newComments = [ ...comments.slice(0, foundIndex), ...comments.slice(foundIndex + 1) ];
+    console.table(newComments);
+
+    // Array.prototype.concat() could also have been used
+    // let newComments = comments.slice(0, foundIndex).concat(comments.slice(foundIndex + 1));
+
+
 
   </script>
 </body>
