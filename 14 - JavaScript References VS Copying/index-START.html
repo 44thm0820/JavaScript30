@@ -106,6 +106,14 @@
     console.clear();
     console.log(wes);
 
+    const dev = Object.assign({}, wes);
+    const dev2 = JSON.parse(JSON.stringify(wes));
+    //we successfully now made a copy of the wes object, but shallow one level using Object.assign - further level down is not a copy but a reference - such that if you assign dev.social.twitter to '@coolman', wes.social.twitter becomes also '@coolman'
+
+    //to do a real clone, use clone deep but also
+    // you can use parse and stringify
+
+
   </script>
 
 </body>
