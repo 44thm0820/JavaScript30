@@ -64,11 +64,13 @@
     };
 
     // and think we make a copy:
-    const captain = person;
-    captain.number = 99;
+    // const captain = person;
+    // captain.number = 99; //person.age becomes 99 also
 
     // how do we take a copy instead?
     const cap2 = Object.assign({}, person, { number: 99});
+    console.log(cap2);
+
     // Object.assign is ES6!
     // mdn definition: The Object.assign() method copies all enumerable own properties from one or more source objects to a target object. It returns the target object.
     /*
