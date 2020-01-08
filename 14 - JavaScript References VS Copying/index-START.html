@@ -64,8 +64,26 @@
     };
 
     // and think we make a copy:
+    const captain = person;
+    captain.number = 99;
 
     // how do we take a copy instead?
+    const cap2 = Object.assign({}, person, { number: 99});
+    // Object.assign is ES6!
+    // mdn definition: The Object.assign() method copies all enumerable own properties from one or more source objects to a target object. It returns the target object.
+    /*
+      JavaScript Demo: Object.assign()
+      const target = { a: 1, b: 2 };
+      const source = { b: 4, c: 5 };
+
+      const returnedTarget = Object.assign(target, source);
+
+      console.log(target);
+      // expected output: Object { a: 1, b: 4, c: 5 }
+
+      console.log(returnedTarget);
+      // expected output: Object { a: 1, b: 4, c: 5 }
+    */
 
     // We will hopefully soon see the object ...spread
 
