@@ -88,8 +88,23 @@
     */
 
     // We will hopefully soon see the object ...spread
+    const cap3 = {...person};
+    // now covered as January 2020!!
+    // Spread in object literals covered in Chrome 60 according to mdn. Also Firefox 55 and Safari 11.1
 
     // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
+
+    const wes = {
+      name: 'Wes',
+      age: 100,
+      social: {
+        twitter: '@wesbos',
+        facebook: 'wesbos.developer'
+      }
+    }
+
+    console.clear();
+    console.log(wes);
 
   </script>
 
