@@ -13,6 +13,7 @@ function timer(seconds) {
   const now = Date.now();  //old equivalent way was (new Date()).getTime();
   const then = now + seconds * 1000; //multiplied by 1000 because now is in milliseconds
   // console.log({now, then});
+  displayTimeLeft(seconds);
   countdown = setInterval(() => { // notice now that right now it doesnt countdown immediately - it waits one second before counting down.... need to change this behavior
     const secondsLeft = Math.round((then - Date.now()) / 1000); //converting to seconds from milliseconds
     // check if we should stop it! - in order to stop it we need to store countdown in a separate global variable
@@ -21,9 +22,10 @@ function timer(seconds) {
       return;
     }
     // display it
-    console.log(secondsLeft);
+    displayTimeLeft(secondsLeft);
   }, 1000)
 }
 
-//next thing we have to do is to display every second the amount of time left
-
+function displayTimeLeft(seconds) { // call this before invoking setInterval to display the first display countdown immediately and not one wait one second
+  console.log(seconds);
+}
