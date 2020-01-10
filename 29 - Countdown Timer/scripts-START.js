@@ -63,6 +63,9 @@ document.customForm.addEventListener('submit', function(e){
   e.preventDefault();
   const mins = this.minutes.value;
   // console.log(mins, ' are the mins');
-  timer(mins * 60);
-  this.reset();
+  timer(mins * 60); //multiplied by 60 because timer requires seconds as argument
+  this.reset(); //clears out the value
 });
+
+// complete...
+// to take this project further, maybe add some animation and interaction, or add the feature of hours
