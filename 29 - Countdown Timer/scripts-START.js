@@ -27,5 +27,10 @@ function timer(seconds) {
 }
 
 function displayTimeLeft(seconds) { // call this before invoking setInterval to display the first display countdown immediately and not one wait one second
-  console.log(seconds);
+  const minutes = Math.floor(seconds /60);
+  const remainderSeconds = seconds % 60;
+  // const minutes = (seconds /60);
+  // console.log(seconds);
+  console.log({minutes, remainderSeconds});
+
 }
