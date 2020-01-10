@@ -46,3 +46,12 @@ function displayEndTime(timestamp) {
   endTime.textContent =`Be Back at ${adjustedHour}:${minutes < 10 ? '0' : ''}${minutes}`;
   // endTime.textContent =`Be Back at ${adjustedHour}:${minutes < 10 ? '0' : ''}${minutes} ${hour > 12 ? 'p.m.' : 'a.m.'}`;
 }
+
+function startTimer() {
+  console.log(this); // gives us an element in the console like <button data-time="20" class="timer__button">20 Secs</button> when we click the 20 secs button
+  //to get the data-time out, we console.log(this.dataset.time) as this.dataset is an object with the key value property of time: "20" - this.dataset.time will give us a string of the number of minutes.
+  const seconds = parseInt(this.dataset.time); // parseInt transforms the string into a number
+  console.log(seconds);
+}
+
+buttons.forEach(button => button.addEventListener('click', startTimer));
