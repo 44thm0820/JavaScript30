@@ -11,6 +11,9 @@ const endTime = document.querySelector('.display__end-time');
 const buttons = document.querySelectorAll('[data-time]');
 
 function timer(seconds) {
+  // clear any existing timers
+  clearInterval(countdown);
+
   //to figure out when timer started, write below
   const now = Date.now();  //old equivalent way was (new Date()).getTime();
   const then = now + seconds * 1000; //multiplied by 1000 because now is in milliseconds
@@ -48,10 +51,11 @@ function displayEndTime(timestamp) {
 }
 
 function startTimer() {
-  console.log(this); // gives us an element in the console like <button data-time="20" class="timer__button">20 Secs</button> when we click the 20 secs button
+  // console.log(this); // gives us an element in the console like <button data-time="20" class="timer__button">20 Secs</button> when we click the 20 secs button
   //to get the data-time out, we console.log(this.dataset.time) as this.dataset is an object with the key value property of time: "20" - this.dataset.time will give us a string of the number of minutes.
   const seconds = parseInt(this.dataset.time); // parseInt transforms the string into a number
-  console.log(seconds);
+  // console.log(seconds);
+  timer(seconds);
 }
 
 buttons.forEach(button => button.addEventListener('click', startTimer));
