@@ -56,13 +56,32 @@
 
     // Grouping together
     dogs.forEach(dog => {
+      // console.group(`${dog.name}`); // either console.group or console.groupCollapsed will do - collapsed shows a collapsed group - you can collapse console.group and uncollapse a console.groupCollapsed
+      console.groupCollapsed(`${dog.name}`);
       console.log(`This is ${dog.name}`);
       console.log(`${dog.name} is ${dog.age} years old`);
       console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+      console.groupEnd(`${dog.name}`); //creates a divided dropdown for each group
     })
     // counting
+      //shows how many times we've run the statement
+    console.count('Wes') // Wes: 1
+    console.count('Wes') // Wes: 2
+    console.count('Steve') // Steve: 1
+    console.count('Wes') // Wes: 3
+    console.count('Steve') // Steve: 2
 
-    // timing
+    // timing (in addition to performance dot now in the browser)
+      // tells you how much time something took
+    console.time('fetching data');
+    fetch('https://api.github.com/users/wesbos')
+      .then(data => data.json())
+      .then(data => {
+        console.timeEnd('fetching data');
+        console.log(data);
+      });
+
+    console.table(dogs); //presents a visual table in console for an array
 
   </script>
 </body>
