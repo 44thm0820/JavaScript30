@@ -66,6 +66,24 @@ function sortNoArticles(array) {
 //my shot completed
 //testing my shot whether it works
 const sortedBandsMine = sortNoArticles(bands);
+// console.log(sortedBandsMine);  // works!
+
+//wes's solution below
+function strip(bandName) {
+  return bandName.replace(/^(a |the |an )/i, '').trim();
+}
+
+const sortedBands = bands.sort((a,b) => strip(a) > strip(b) ? 1 : -1);
+
+// document.querySelector('#bands').innerHTML =
+//   sortedBandsMine
+//     .map(band => `<li>${band}</li>`)
+//     .join('')
+document.querySelector('#bands').innerHTML =
+  sortedBands
+    .map(band => `<li>${band}</li>`)
+    .join('')
+
 console.log(sortedBandsMine);
 
 </script>
