@@ -52,34 +52,15 @@ const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'N
 function sortNoArticles(array) {
   let arr2 = Array.from(array);
   arr2.sort((a,b) => {
-    let articles = ['A', 'An', 'The'];
-    let aTitle = a;
-    let bTitle = b;
+    const articles = ['A', 'An', 'The'];
     if(articles.includes(a.split(' ')[0])) {
-      console.log(a.split(' ')[0], 'is first word');
-      let editedA = a.slice().split(' ');
-      editedA.shift();
-       aTitle = editedA.join(' ');
-       console.log(aTitle, ' is chopped title');
-
+      a = a.slice().split(' ').slice(1).join(' ');
     }
     if(articles.includes(b.split(' ')[0])) {
-      console.log(b.split(' ')[0], 'is first word');
-
-      let editedB = b.slice().split(' ');
-      editedB.shift();
-      bTitle = editedB.join(' ');
-      console.log(bTitle, ' is chopped title');
+      b = b.slice().split(' ').slice(1).join(' ');
     }
-    if (aTitle < bTitle) {
-    return -1;
-    }
-    if (aTitle > bTitle) {
-      return 1;
-    }
-    return 0;
+    return a < b ? - 1 : 1;
   });
-
   return arr2;
 }
 //my shot completed
